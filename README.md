@@ -40,6 +40,21 @@ du **premier cours après chaque période de vacances** :
 
 ---
 
+### Correction du script `icalTOcsv.py` (gestion de la timezone)
+
+Lors de l’exploitation des données issues d’ADE, un problème a été identifié dans le script fourni initialement (`icalTOcsv.py`).
+Celui-ci **ne prenait pas en compte la timezone**, ce qui entraînait des **décalages d’horaires** entre les cours affichés dans ADE et les heures présentes dans le fichier CSV généré.
+
+Afin de garantir la fiabilité des informations (notamment l’heure du premier cours après les vacances), une **correction a été apportée** pour intégrer correctement la gestion de la timezone lors de la conversion du fichier `.ics` vers `.csv`.
+
+Cette correction permet :
+
+* d’obtenir des **horaires exacts**,
+* d’éviter les décalages d’une ou deux heures selon la période de l’année,
+* et d’assurer la cohérence des données utilisées par le script principal du projet.
+
+---
+
 ### Fonctionnement général
 
 1. L’utilisateur choisit son **groupe de TP** (TP1 à TP4).
